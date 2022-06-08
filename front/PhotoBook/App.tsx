@@ -8,7 +8,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -29,6 +29,7 @@ import {
 
 const Section: React.FC<{
   title: string;
+  children: ReactNode;
 }> = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
