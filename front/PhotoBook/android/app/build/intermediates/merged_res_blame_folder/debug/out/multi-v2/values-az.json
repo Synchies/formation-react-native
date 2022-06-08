@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\orsys\\Desktop\\photobook\\front\\PhotoBook\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
+            "outputFile": "C:\\Users\\orsys\\Desktop\\Formation\\frn-juin-2022\\front\\PhotoBook\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\orsys\\.gradle\\caches\\transforms-3\\ae69f9febffe2b84dffe33a0997745bf\\transformed\\core-1.5.0\\res\\values-az\\values-az.xml",
