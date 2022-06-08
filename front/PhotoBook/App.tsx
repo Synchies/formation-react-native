@@ -8,8 +8,11 @@
  * @format
  */
 
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import HomeScreen from './src/HomeScreen';
 import SplashScreen from './src/SplashScreen';
 
@@ -17,6 +20,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   console.log('setIsLoading: ', setIsLoading);
   console.log('isLoading: ', isLoading);
+  const Stack = createNativeStackNavigator();
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,11 +29,26 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <StatusBar barStyle="dark-content" />
-      {isLoading ? <SplashScreen /> : <HomeScreen /> }
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeAreaView}>
+        {isLoading ? (
+          <SplashScreen />
+        ) : (
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen name="Home" component={HomeScreen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        )}
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  safeAreaView: {
+    height: '100%'
+  }
+})
 
 export default App;

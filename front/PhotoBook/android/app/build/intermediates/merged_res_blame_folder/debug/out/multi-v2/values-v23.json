@@ -1,8 +1,46 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\orsys\\Desktop\\Formation\\frn-juin-2022\\front\\PhotoBook\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\orsys\\Desktop\\photobook\\front\\PhotoBook\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\orsys\\.gradle\\caches\\transforms-3\\fe8c37177df0a9aabfab05f006d722b6\\transformed\\material-1.1.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,320",
+                        "endLines": "5,9",
+                        "endColumns": "10,10",
+                        "endOffsets": "315,588"
+                    },
+                    "to": {
+                        "startLines": "53,57",
+                        "startColumns": "4,4",
+                        "startOffsets": "3674,3939",
+                        "endLines": "56,60",
+                        "endColumns": "10,10",
+                        "endOffsets": "3934,4207"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\orsys\\.gradle\\caches\\transforms-3\\634cac73fcbd8452c99b28c407e98633\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "3524",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3669"
+                    }
+                },
                 {
                     "source": "C:\\Users\\orsys\\.gradle\\caches\\transforms-3\\76bfe04a8aefb1ec0ed9b6b190cbd74a\\transformed\\appcompat-1.3.0\\res\\values-v23\\values-v23.xml",
                     "from": {
