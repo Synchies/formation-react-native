@@ -14,7 +14,6 @@ import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {
   connect,
   selectAuthentication,
-  User,
 } from '../redux/slices/authentication.slice';
 
 type LoginProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
@@ -41,6 +40,7 @@ const LoginScreen = ({navigation}: LoginProps) => {
         dispatch(connect(user));
         navigation.replace('Home');
       } catch (err) {
+        console.log(err);
         setErrorMsg(
           "Message d'erreur dont on se branle ne méritant pas 5min de la formation.",
         );
@@ -65,21 +65,30 @@ const LoginScreen = ({navigation}: LoginProps) => {
           onChangeText={setPassword}
           defaultValue={''}
           secureTextEntry></TextInput>
-        {isLoading ? <ActivityIndicator /> : <Button title="Connect" onPress={onSubmit} />}
-        <Text style={styles.error}>{errorMsg}</Text>
+        <View style={styles.buttonContainer}>
+          {isLoading ? (
+            <ActivityIndicator />
+          ) : (
+            <Button title="Connect" onPress={onSubmit} />
+          )}
+          <Text style={styles.error}>{errorMsg}</Text>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  buttonContainer: {
+    height: 60,
+  },
   error: {
     color: 'red',
     fontWeight: 'bold',
     height: 50,
   },
   form: {
-    height: 200,
+    height: 300,
     alignItems: 'stretch',
     justifyContent: 'space-between',
   },

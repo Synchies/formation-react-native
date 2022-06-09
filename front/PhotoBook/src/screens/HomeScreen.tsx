@@ -1,9 +1,9 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React, { useEffect, useLayoutEffect } from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { RootStackParamList } from '../navigation';
-import {useAppSelector} from '../redux/hooks';
-import {selectAuthentication} from '../redux/slices/authentication.slice';
+import { useAppSelector } from '../redux/hooks';
+import { selectAuthentication } from '../redux/slices/authentication.slice';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
