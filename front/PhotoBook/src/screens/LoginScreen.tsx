@@ -1,11 +1,32 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import {RootStackParamList} from '../navigation';
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {
+  connect,
+  selectAuthentication,
+  User,
+} from '../redux/slices/authentication.slice';
 
 type LoginProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 const LoginScreen = ({navigation}: LoginProps) => {
+  const authentication = useAppSelector(selectAuthentication);
+  const dispatch = useAppDispatch();
+
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSubmit = () => {
+    const user: User = {
+      displayName: 'Caca',
+    };
+
+    dispatch(connect(user));
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.form}>
@@ -13,20 +34,15 @@ const LoginScreen = ({navigation}: LoginProps) => {
         <TextInput
           style={styles.textInput}
           placeholder="Ex: Toto"
-          onChangeText={newText => {}}
+          onChangeText={setLogin}
           defaultValue={''}></TextInput>
         <TextInput
           style={styles.textInput}
           placeholder="Password..."
-          onChangeText={newText => {}}
+          onChangeText={setPassword}
           defaultValue={''}
           secureTextEntry></TextInput>
-        <Button
-          title="Connect"
-          onPress={() => {
-            navigation.navigate('Home');
-          }}
-        />
+        <Button title="Connect" onPress={onSubmit} />
       </View>
     </View>
   );
@@ -46,7 +62,7 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
     fontSize: 50,
-    marginBottom: 20
+    marginBottom: 20,
   },
   mainContainer: {
     alignItems: 'stretch',

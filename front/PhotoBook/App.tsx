@@ -13,14 +13,16 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import { RootStackParamList } from './src/navigation';
+import {Provider} from 'react-redux';
+import {RootStackParamList} from './src/navigation';
+import {store} from './src/redux/store';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SplashScreen from './src/screens/SplashScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const App = () => {
+const ReduxApp = () => {
   const [isLoading, setIsLoading] = useState(true);
   console.log('setIsLoading: ', setIsLoading);
   console.log('isLoading: ', isLoading);
@@ -51,10 +53,18 @@ const App = () => {
   );
 };
 
+const App = () => {
+  return (
+    <Provider store={store}>
+      <ReduxApp />
+    </Provider>
+  );
+};
+
 const styles = StyleSheet.create({
   safeAreaView: {
-    height: '100%'
-  }
-})
+    height: '100%',
+  },
+});
 
 export default App;
