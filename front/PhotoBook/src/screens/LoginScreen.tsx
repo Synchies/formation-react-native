@@ -1,6 +1,14 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+import api, {LoginForm} from '../api';
 import {RootStackParamList} from '../navigation';
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {
@@ -17,14 +25,29 @@ const LoginScreen = ({navigation}: LoginProps) => {
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = () => {
-    const user: User = {
-      displayName: 'Caca',
-    };
+    setIsLoading(true);
+    (async () => {
+      try {
+        const loginForm: LoginForm = {
+          login,
+          password,
+        };
+        const user = await api.connect(loginForm);
 
-    dispatch(connect(user));
-    navigation.navigate('Home');
+        dispatch(connect(user));
+        navigation.replace('Home');
+      } catch (err) {
+        setErrorMsg(
+          "Message d'erreur dont on se branle ne méritant pas 5min de la formation.",
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    })();
   };
 
   return (
@@ -42,13 +65,19 @@ const LoginScreen = ({navigation}: LoginProps) => {
           onChangeText={setPassword}
           defaultValue={''}
           secureTextEntry></TextInput>
-        <Button title="Connect" onPress={onSubmit} />
+        {isLoading ? <ActivityIndicator /> : <Button title="Connect" onPress={onSubmit} />}
+        <Text style={styles.error}>{errorMsg}</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  error: {
+    color: 'red',
+    fontWeight: 'bold',
+    height: 50,
+  },
   form: {
     height: 200,
     alignItems: 'stretch',
