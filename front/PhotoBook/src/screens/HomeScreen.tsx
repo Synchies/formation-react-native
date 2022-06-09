@@ -1,7 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useLayoutEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {Icon} from '@rneui/themed';
 import {RootStackParamList} from '../navigation';
 import {useAppSelector} from '../redux/hooks';
 import {selectAuthentication} from '../redux/slices/authentication.slice';
@@ -23,10 +24,31 @@ const HomeScreen = ({navigation}: HomeProps) => {
   }, [authentication]);
 
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Wall" component={WallScreen} />
-      <Tab.Screen name="Legal" component={LegalScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Tab.Screen
+        name="Wall"
+        component={WallScreen}
+        options={{
+          tabBarIcon: () => <Icon name="home" type="font-awesome-5" />,
+        }}
+      />
+      <Tab.Screen
+        name="Legal"
+        component={LegalScreen}
+        options={{
+          tabBarIcon: () => <Icon name="legal" type="font-awesome" />,
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: () => <Icon name="gear" type="font-awesome" />,
+        }}
+      />
     </Tab.Navigator>
   );
 };

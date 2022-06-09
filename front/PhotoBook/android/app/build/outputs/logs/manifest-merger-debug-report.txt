@@ -10,6 +10,7 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\orsys
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\d65cbf75bdaf27c7f2118967d253b6a1\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.68.2] C:\Users\orsys\.gradle\caches\transforms-3\ea139e08bf8a5fb8988b07efb261812f\transformed\jetified-react-native-0.68.2\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\f286e73bb11993a4678a3dd29bc7347c\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] C:\Users\orsys\.gradle\caches\transforms-3\207140d4b384b061e7629ea1f8fc4cf9\transformed\jetified-android-jsc-r250230\AndroidManifest.xml:2:1-11:12
@@ -168,6 +169,8 @@ MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\f
 MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.68.2] C:\Users\orsys\.gradle\caches\transforms-3\ea139e08bf8a5fb8988b07efb261812f\transformed\jetified-react-native-0.68.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.68.2] C:\Users\orsys\.gradle\caches\transforms-3\ea139e08bf8a5fb8988b07efb261812f\transformed\jetified-react-native-0.68.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\f286e73bb11993a4678a3dd29bc7347c\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44

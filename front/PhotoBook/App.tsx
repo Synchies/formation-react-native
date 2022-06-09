@@ -15,7 +15,10 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
+import api from './src/api';
 import {RootStackParamList} from './src/navigation';
+import { useAppDispatch } from './src/redux/hooks';
+import { connect } from './src/redux/slices/authentication.slice';
 import {store} from './src/redux/store';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
@@ -24,6 +27,7 @@ import SplashScreen from './src/screens/SplashScreen';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const ReduxApp = () => {
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(true);
   console.log('setIsLoading: ', setIsLoading);
   console.log('isLoading: ', isLoading);
@@ -31,9 +35,18 @@ const ReduxApp = () => {
   const isConnected = false;
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    (async () => {
+      try {
+        const user = await api.isConnected();
+        if (user) {
+          dispatch(connect(user))
+        }
+      } catch(err) {
+  
+      } finally {
+        setIsLoading(false)
+      }
+    })();
   }, []);
 
   return (

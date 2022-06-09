@@ -1,10 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import api from '../api';
+import { useAppDispatch } from '../redux/hooks';
+import { disconnect } from '../redux/slices/authentication.slice';
 
 const SettingsScreen = () => {
+    const dispatch = useAppDispatch();
+
+    const onPressDisconnect = () => {
+        console.log('about to disconnect');
+        dispatch(disconnect(undefined));
+        api.disconnect();
+    }
+
     return (
         <View style={styles.mainContainer}>
             <Text style={styles.text}>Settings</Text>
+            <Button title="Disconnect" onPress={onPressDisconnect} />
         </View>
     );
 };
