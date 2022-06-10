@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
+import NewArticle from '../articles/NewArticle';
 import { backEndUrl } from '../env';
 
 const WallScreen = () => {
@@ -9,6 +10,7 @@ const WallScreen = () => {
         style={styles.image}
         source={{uri: backEndUrl + '/images/wall.jpg'}}
       />
+      <NewArticle />
       <Text style={styles.text}>Wall</Text>
     </View>
   );
