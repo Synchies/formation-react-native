@@ -1,17 +1,23 @@
+import {Icon} from '@rneui/base';
 import React, {useState} from 'react';
 import {
   ActivityIndicator,
   Button,
+  Image,
   StyleSheet,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
+import {launchImageLibrary} from 'react-native-image-picker';
+import api from '../api';
+import { backEndUrl } from '../env';
 import {useAppDispatch} from '../redux/hooks';
 import {addNewArticle, fetchAllArticles} from '../redux/slices/articles.slice';
 
 const NewArticle = () => {
   const [text, setText] = useState('');
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState([] as string[]);
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -27,8 +33,42 @@ const NewArticle = () => {
       } finally {
         setIsLoading(false);
         setText('');
+        setImages([]);
       }
     })();
+  };
+
+  const onUpload = async () => {
+    console.log('adding photos');
+    const result = await launchImageLibrary({
+      mediaType: 'photo',
+    });
+    console.log('result: ', result);
+    if (result.assets === undefined) {
+      return;
+    }
+
+    for (const asset of result.assets) {
+      try {
+        // for the time being support only jpg
+        const imageName =
+          Date.now() + '_' + Math.floor(1e6 * Math.random()) + '.jpg';
+        console.log('imageName: ', imageName);
+        const formData = new FormData();
+        formData.append('file', {
+          uri: asset.uri,
+          name: imageName,
+          type: asset.type,
+        });
+        const response = await api.upload(formData);
+        console.log('response: ', response);
+        const imageUri = backEndUrl + '/' + imageName;
+        console.log('imageUri: ', imageUri);
+        setImages([...images, imageUri]);
+      } catch (err) {
+        console.log('err: ', err);
+      }
+    }
   };
 
   return (
@@ -41,16 +81,42 @@ const NewArticle = () => {
         style={styles.textInput}
         placeholder="Comment vous sentez-vous aujourd'hui ?"
       />
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <Button title="Ajouter un article" onPress={onSubmit} />
-      )}
+      <View style={styles.imageView}>
+        {images.map(imageUri => (
+          <Image
+            key={imageUri}
+            style={styles.image}
+            source={{
+              uri: imageUri,
+            }}
+          />
+        ))}
+      </View>
+      <View style={styles.buttons}>
+        <TouchableOpacity onPress={onUpload}>
+          <View>
+            <Icon name="add-photo-alternate" raised />
+          </View>
+        </TouchableOpacity>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <TouchableOpacity onPress={onSubmit}>
+            <View>
+              <Icon name="add" raised />
+            </View>
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   text: {
     fontWeight: 'bold',
     fontSize: 50,
@@ -65,6 +131,17 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     textAlignVertical: 'top',
   },
+  imageView: {
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    width: '100%',
+  },
+  image: {
+    height: 200,
+    resizeMode: 'cover',
+  }
 });
 
 export default NewArticle;

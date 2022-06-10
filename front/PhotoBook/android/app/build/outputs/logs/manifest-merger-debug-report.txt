@@ -8,6 +8,7 @@ MERGED from C:\Users\orsys\Desktop\photobook\front\PhotoBook\android\app\src\mai
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\2519ecf1336220aa13d20a30c8659e11\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\39923f19720d7874cba3832b93ef845e\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\d65cbf75bdaf27c7f2118967d253b6a1\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
+MERGED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-vector-icons] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -38,6 +39,7 @@ MERGED from [com.facebook.fresco:ui-common:2.6.0] C:\Users\orsys\.gradle\caches\
 MERGED from [androidx.appcompat:appcompat-resources:1.3.0] C:\Users\orsys\.gradle\caches\transforms-3\c98067460a86d94b7dc848c2654e0716\transformed\jetified-appcompat-resources-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\orsys\.gradle\caches\transforms-3\714a3c2db058d152c0ce86a6017a3e30\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\2756b5c1dc3928ee83810b37ca81f6a7\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.1] C:\Users\orsys\.gradle\caches\transforms-3\4daf6b9e4c4979631b23f266b8f56668\transformed\exifinterface-1.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\orsys\.gradle\caches\transforms-3\ff592e14652243c7ff9cd22d5e234249\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.5.0] C:\Users\orsys\.gradle\caches\transforms-3\1d88fd24781e7922e8a30ec5f677b835\transformed\jetified-core-ktx-1.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\e8ec649e91b22b21657be640e344f119\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -95,6 +97,8 @@ application
 ADDED from C:\Users\orsys\Desktop\photobook\front\PhotoBook\android\app\src\main\AndroidManifest.xml:6:5-25:19
 MERGED from C:\Users\orsys\Desktop\photobook\front\PhotoBook\android\app\src\main\AndroidManifest.xml:6:5-25:19
 MERGED from C:\Users\orsys\Desktop\photobook\front\PhotoBook\android\app\src\main\AndroidManifest.xml:6:5-25:19
+MERGED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.68.2] C:\Users\orsys\.gradle\caches\transforms-3\ea139e08bf8a5fb8988b07efb261812f\transformed\jetified-react-native-0.68.2\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-native:0.68.2] C:\Users\orsys\.gradle\caches\transforms-3\ea139e08bf8a5fb8988b07efb261812f\transformed\jetified-react-native-0.68.2\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.3] C:\Users\orsys\.gradle\caches\transforms-3\68d0d7b95d068ff383d6d766d89bd7b7\transformed\jetified-soloader-0.10.3\AndroidManifest.xml:11:5-20
@@ -165,6 +169,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\orsys
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\39923f19720d7874cba3832b93ef845e\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\d65cbf75bdaf27c7f2118967d253b6a1\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\d65cbf75bdaf27c7f2118967d253b6a1\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -225,6 +231,8 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\ors
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\orsys\.gradle\caches\transforms-3\714a3c2db058d152c0ce86a6017a3e30\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\2756b5c1dc3928ee83810b37ca81f6a7\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\orsys\.gradle\caches\transforms-3\2756b5c1dc3928ee83810b37ca81f6a7\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.1] C:\Users\orsys\.gradle\caches\transforms-3\4daf6b9e4c4979631b23f266b8f56668\transformed\exifinterface-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.1] C:\Users\orsys\.gradle\caches\transforms-3\4daf6b9e4c4979631b23f266b8f56668\transformed\exifinterface-1.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\orsys\.gradle\caches\transforms-3\ff592e14652243c7ff9cd22d5e234249\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\orsys\.gradle\caches\transforms-3\ff592e14652243c7ff9cd22d5e234249\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.5.0] C:\Users\orsys\.gradle\caches\transforms-3\1d88fd24781e7922e8a30ec5f677b835\transformed\jetified-core-ktx-1.5.0\AndroidManifest.xml:5:5-7:41
@@ -301,3 +309,19 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\2519ecf1336220aa13d20a30c8659e11\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\orsys\.gradle\caches\transforms-3\2519ecf1336220aa13d20a30c8659e11\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+provider#com.imagepicker.ImagePickerProvider
+ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-71
+	android:exported
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-63
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+	android:resource
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+	android:name
+		ADDED from [:react-native-image-picker] C:\Users\orsys\Desktop\photobook\front\PhotoBook\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67

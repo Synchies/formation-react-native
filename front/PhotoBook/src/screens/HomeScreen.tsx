@@ -1,8 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React, {useLayoutEffect} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
 import {Icon} from '@rneui/themed';
+import React, {useLayoutEffect} from 'react';
+import {StyleSheet} from 'react-native';
 import {RootStackParamList} from '../navigation';
 import {useAppSelector} from '../redux/hooks';
 import {selectAuthentication} from '../redux/slices/authentication.slice';
@@ -21,7 +21,7 @@ const HomeScreen = ({navigation}: HomeProps) => {
     if (!authentication.user) {
       navigation.replace('Login');
     }
-  }, [authentication]);
+  }, [authentication, navigation]);
 
   return (
     <Tab.Navigator

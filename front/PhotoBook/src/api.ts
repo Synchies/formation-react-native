@@ -8,11 +8,12 @@ export interface LoginForm {
   password: string;
 }
 
-const apiUrl = backEndUrl + '/api';
-
 class Api {
+
+  apiUrl = backEndUrl + '/api';
+
   async connect(loginForm: LoginForm): Promise<User> {
-    const response = await fetch(apiUrl + '/connect', {
+    const response = await fetch(this.apiUrl + '/connect', {
       method: 'POST',
       body: JSON.stringify(loginForm),
       headers: {'Content-Type': 'application/json'},
@@ -29,13 +30,13 @@ class Api {
   }
 
   async disconnect() {
-    await fetch(apiUrl + '/disconnect', {
+    await fetch(this.apiUrl + '/disconnect', {
       method: 'POST',
     });
   }
 
   async isConnected(): Promise<User | undefined> {
-    const response = await fetch(apiUrl + '/is-connected', {
+    const response = await fetch(this.apiUrl + '/is-connected', {
       method: 'GET',
     });
     const status = response.status;
@@ -50,7 +51,7 @@ class Api {
   }
 
   async addArticle(article: Article) {
-    const url = apiUrl + '/articles';
+    const url = this.apiUrl + '/articles';
     console.log('url: ', url);
 
     const response = await authFetch(url, {
@@ -69,7 +70,7 @@ class Api {
   }
 
   async getArticles(): Promise<Article[]> {
-    const response = await authFetch(apiUrl + '/articles');
+    const response = await authFetch(this.apiUrl + '/articles');
 
     if (response.status !== 200) {
       throw new Error('pété');
@@ -79,7 +80,7 @@ class Api {
   }
 
   async upload(formData: FormData) {
-    return await authFetch(apiUrl + '/upload', {
+    return await authFetch(this.apiUrl + '/upload', {
       method: 'POST',
       headers: {
         'Content-Type': 'multipart/form-data',
