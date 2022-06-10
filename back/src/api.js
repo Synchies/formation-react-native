@@ -20,13 +20,15 @@ app.post("/connect", (req, res) => {
 });
 
 app.post("/disconnect", (req, res) => {
-    req.session.user = undefined;
+  req.session.user = undefined;
   res.status(204).end();
 });
 
 app.get("/is-connected", (req, res) => {
-    if (!req.session.user) res.status(401).end();
-    else res.json(req.session.user);
-})
+  if (!req.session.user) res.status(401).end();
+  else res.json(req.session.user);
+});
+
+
 
 module.exports = app;

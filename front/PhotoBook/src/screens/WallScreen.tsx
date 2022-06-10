@@ -11,7 +11,7 @@ const WallScreen = () => {
         source={{uri: backEndUrl + '/images/wall.jpg'}}
       />
       <NewArticle />
-      <Text style={styles.text}>Wall</Text>
+      <ArticleList />
     </View>
   );
 };

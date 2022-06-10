@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {ActivityIndicator, Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import {useAppDispatch} from '../redux/hooks';
 import {addNewArticle} from '../redux/slices/articles.slice';
 
@@ -18,6 +18,7 @@ const NewArticle = () => {
         console.log(err);
       } finally {
         setIsLoading(false);
+        setText('');
       }
     })();
   };
@@ -32,7 +33,7 @@ const NewArticle = () => {
         style={styles.textInput}
         placeholder="Comment vous sentez-vous aujourd'hui ?"
       />
-      <Button title="Ajouter un article" onPress={onSubmit} />
+      { isLoading ? <ActivityIndicator /> : <Button title="Ajouter un article" onPress={onSubmit} /> }
     </View>
   );
 };
