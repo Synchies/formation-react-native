@@ -7,7 +7,7 @@ const api = require("./api");
 
 const app = express();
 const port = 3000;
-const wwwDir = "../public";
+const wwwDir = "./public";
 
 app.use(morgan("tiny"));
 app.use(
