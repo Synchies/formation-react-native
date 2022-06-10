@@ -53,17 +53,14 @@ const NewArticle = () => {
         // for the time being support only jpg
         const imageName =
           Date.now() + '_' + Math.floor(1e6 * Math.random()) + '.jpg';
-        console.log('imageName: ', imageName);
         const formData = new FormData();
         formData.append('file', {
           uri: asset.uri,
           name: imageName,
           type: asset.type,
         });
-        const response = await api.upload(formData);
-        console.log('response: ', response);
+        await api.upload(formData);
         const imageUri = backEndUrl + '/' + imageName;
-        console.log('imageUri: ', imageUri);
         setImages([...images, imageUri]);
       } catch (err) {
         console.log('err: ', err);
