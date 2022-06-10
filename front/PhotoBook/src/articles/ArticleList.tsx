@@ -29,7 +29,7 @@ const ArticleList = () => {
           <View style={styles.article} key={article.id}>
             <Text style={styles.text}>{article.content}</Text>
             <View style={styles.imageView}>
-              {article.images.map(imageUri => (
+              {article.images && article.images.map(imageUri => (
                 <Image
                   key={imageUri}
                   style={styles.image}

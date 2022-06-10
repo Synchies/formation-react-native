@@ -1,18 +1,37 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, RefreshControl, ScrollView, StyleSheet} from 'react-native';
+import ArticleList from '../articles/ArticleList';
 import NewArticle from '../articles/NewArticle';
-import { backEndUrl } from '../env';
+import {backEndUrl} from '../env';
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {
+  selectArticleStatus,
+  fetchAllArticles,
+} from '../redux/slices/articles.slice';
 
 const WallScreen = () => {
+  const dispatch = useAppDispatch();
+  const articleStatus = useAppSelector(selectArticleStatus);
+  const onRefresh = () => {
+    dispatch(fetchAllArticles());
+  };
+
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView
+      style={styles.mainContainer}
+      refreshControl={
+        <RefreshControl
+          refreshing={articleStatus === 'loading'}
+          onRefresh={onRefresh}
+        />
+      }>
       <Image
         style={styles.image}
         source={{uri: backEndUrl + '/images/wall.jpg'}}
       />
       <NewArticle />
       <ArticleList />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -22,13 +41,13 @@ const styles = StyleSheet.create({
     fontSize: 50,
   },
   mainContainer: {
-    alignItems: 'center',
+    //alignItems: 'center',
     height: '100%',
   },
   image: {
-      height: 300,
-      width: '100%'
-  }
+    height: 300,
+    width: '100%',
+  },
 });
 
 export default WallScreen;

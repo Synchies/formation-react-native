@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
-import {ActivityIndicator, Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  ActivityIndicator,
+  Button,
+  StyleSheet,
+  TextInput,
+  View,
+} from 'react-native';
 import {useAppDispatch} from '../redux/hooks';
-import {addNewArticle} from '../redux/slices/articles.slice';
+import {addNewArticle, fetchAllArticles} from '../redux/slices/articles.slice';
 
 const NewArticle = () => {
   const [text, setText] = useState('');
@@ -13,7 +19,9 @@ const NewArticle = () => {
     (async () => {
       setIsLoading(true);
       try {
-        await dispatch(addNewArticle({content: text, images}));
+        await dispatch(addNewArticle({content: text, images})).unwrap();
+        setIsLoading(false);
+        await dispatch(fetchAllArticles()).unwrap();
       } catch (err) {
         console.log(err);
       } finally {
@@ -33,7 +41,11 @@ const NewArticle = () => {
         style={styles.textInput}
         placeholder="Comment vous sentez-vous aujourd'hui ?"
       />
-      { isLoading ? <ActivityIndicator /> : <Button title="Ajouter un article" onPress={onSubmit} /> }
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <Button title="Ajouter un article" onPress={onSubmit} />
+      )}
     </View>
   );
 };
